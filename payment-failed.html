@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Payment Failed ❌</title>
+  <style>
+    body {
+      background-color: #f0f5f9; 
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      font-family: Arial, sans-serif; 
+    }
+
+    h1 {
+      color: #006400; /* Success green color */ 
+      margin-bottom: 10px;
+    }
+
+    .message {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="message">
+    <h1>Payment Failed ❌</h1>
+    <h2>Please Try Again Later, If Issue Persisit E-mail Us At help@dataoorts.com.</h2>
+    <p>You'll be redirected to Dataoorts in <span id="countdown">5</span> seconds...</p>
+  </div>
+
+  <button onclick="window.location.href='https://cloud.dataoorts.com/'">
+    Return to Platform
+  </button>
+
+  <script>
+    let seconds = 5;
+    const countdownElement = document.getElementById('countdown');
+
+    setInterval(() => {
+      seconds--;
+      countdownElement.textContent = seconds;
+
+      if (seconds <= 0) {
+        window.location.href = 'https://dataoorts.com/'; 
+        // Or perhaps 'https://cloud.dataoorts.com' if more appropriate
+      }
+    }, 1000); 
+  </script>
+</body>
+</html>
