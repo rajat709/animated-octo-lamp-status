@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Payment Successful ✅</title>
+    <h1>You can now close this tab and go back to the platform to check the status of instance allocation.</h1>
+    <style>
+        body {
+            background-color: #f0f5f9; /* A light, pleasant background color */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif; 
+        }
+
+        .message {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        button {
+            background-color: #007bff; /* Blue button */
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="message">
+        <h1>Redirecting to Dataoorts in <span id="countdown">5</span> seconds...</h1>
+    </div>
+
+    <button onclick="window.location.href='https://cloud.dataoorts.com/'">
+        Visit platform
+    </button>
+
+    <script>
+        let seconds = 5;
+        const countdownElement = document.getElementById('countdown');
+
+        setInterval(() => {
+            seconds--;
+            countdownElement.textContent = seconds;
+
+            if (seconds <= 0) {
+                window.location.href = 'https://dataoorts.com/';
+            }
+        }, 1000); 
+    </script>
+</body>
+</html>
